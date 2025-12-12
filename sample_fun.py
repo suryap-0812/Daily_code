@@ -7,6 +7,8 @@ class player:
 
     def add_point(self, point):
         self.score += point
+        if self.score < 100: self.add_point(20)
+        return self.score
 
 
 class game(player):
@@ -14,7 +16,7 @@ class game(player):
     
     def game_logic(self, answer):
         if (answer in [1, 0]):
-            self.add_point(10)
+            return self.add_point(10)
         return 0
     
 if __name__ == "__main__":
